@@ -1,40 +1,81 @@
-#root {
-  margin: 0 auto;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 2cm;
   }
-  to {
-    transform: rotate(360deg);
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-area {
+    break-inside: avoid;
+  }
+
+  .document-content .section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .grid {
+    display: block !important;
+  }
+
+  .lg\:grid-cols-2 > div:first-child {
+    display: none !important;
+  }
+
+  .lg\:grid-cols-2 > div:last-child {
+    width: 100% !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: none !important;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.document-content p {
+  line-height: 1.6;
+  text-align: justify;
 }
 
-.card {
-  padding: 2em;
+.document-content .section {
+  margin-bottom: 1.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+.document-header {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
